@@ -25,13 +25,16 @@ handleVideos = async (categoriId) => {
         console.log(video);
         const newDiv = document.createElement('card-container');
         newDiv.innerHTML = `
-                <div class="card mx-auto bg-base-100 ">
-                    <figure><img class="" src="${video.thumbnail}" /></figure>
-                    <div class="card-body pl-0 text-left">
+                <div class="card mx-auto  bg-base-100 ">
+                    <figure><img class="max-h-44" src="${video.thumbnail}" /></figure>
+                    <div class="card-body w-96 pl-0 text-left">
                         <!-- author info -->
                         <div class="card-actions justify-start ">
                             <!-- author img  -->
-                            <img class="rounded-full w-10" src="${video.authors[0].profile_picture}" alt="">
+                            <div class="avatar"> 
+                                <div class="w-10 h-10 mr-4 rounded-full">
+                                    <img src="${video.authors[0].profile_picture}" alt="">
+                                </div>
                             <div class="">
                                 <!-- videos title  -->
                                 <h2 class="card-title">${video.title}</h2>
@@ -43,7 +46,7 @@ handleVideos = async (categoriId) => {
                         </div>
                     </div>
                 </div>
-        
+
         `;
         cardContainer.appendChild(newDiv);
 
