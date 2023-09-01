@@ -25,7 +25,7 @@ handleVideos = async (categoriId) => {
         console.log(video);
         const newDiv = document.createElement('card-container');
         newDiv.innerHTML = `
-                <div class="card mx-auto  bg-base-100 ">
+                <div class="card  bg-base-100 ">
                     <figure><img class="max-h-44" src="${video.thumbnail}" /></figure>
                     <div class="card-body w-96 pl-0 text-left">
                         <!-- author info -->
@@ -53,8 +53,13 @@ handleVideos = async (categoriId) => {
     })
 
     // console.log(categoriId);
-
 }
+
+
+
+
+
+
 
 handleCategories()
 handleVideos('1000')
