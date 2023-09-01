@@ -9,11 +9,49 @@ const handleCategories = async () => {
     data.data.forEach((categoris) => {
         const createNewDiv = document.createElement('div')
         createNewDiv.innerHTML = `
-        <a class="tab bg-slate-200 rounded-md">${categoris.category}</a> 
+        <a onclick="handleVideos('${categoris.category_id}')" class="tab bg-slate-200 rounded-md">${categoris.category}</a> 
         `;
         tabContainer.appendChild(createNewDiv)
     })
+};
+
+// adding videos in categoris
+handleVideos = async (categoriId) => {
+    const response = await fetch(`https://openapi.programming-hero.com/api/videos/category/${categoriId}`)
+    const data = await response.json();
+    const cardContainer = document.getElementById('card-container')
+    cardContainer.innerHTML = '';
+    data.data.forEach((video) => {
+        console.log(video);
+        const newDiv = document.createElement('card-container');
+        newDiv.innerHTML = `
+                <div class="card mx-auto bg-base-100 ">
+                    <figure><img class="" src="${video.thumbnail}" /></figure>
+                    <div class="card-body pl-0 text-left">
+                        <!-- author info -->
+                        <div class="card-actions justify-start ">
+                            <!-- author img  -->
+                            <img class="rounded-full w-10" src="${video.authors[0].profile_picture}" alt="">
+                            <div class="">
+                                <!-- videos title  -->
+                                <h2 class="card-title">${video.title}</h2>
+                                <!-- author name -->
+                                <p class="text-sm mt-3">${video.authors[0].profile_name} ${video.authors[0].verified}</p>
+                                <!-- viewed info -->
+                                <p>${video.others.views}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        
+        `;
+        cardContainer.appendChild(newDiv);
+
+    })
+
+    // console.log(categoriId);
 
 }
 
 handleCategories()
+handleVideos('1000')
