@@ -39,7 +39,7 @@ handleVideos = async (categoriId) => {
                                 <!-- videos title  -->
                                 <h2 class="card-title">${video.title}</h2>
                                 <!-- author name -->
-                                <p class="text-sm mt-3">${video.authors[0].profile_name} ${video.authors[0].verified}</p>
+                                <p class="text-sm mt-3">${video.authors[0].profile_name} ${video.authors[0].verified} </p>
                                 <!-- viewed info -->
                                 <p>${video.others.views}</p>
                             </div>
