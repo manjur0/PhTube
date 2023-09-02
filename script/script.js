@@ -27,19 +27,23 @@ handleVideos = async (categoriId) => {
         newDiv.innerHTML = `
                 <div class="card  bg-base-100 ">
                     <figure><img class="max-h-44" src="${video.thumbnail}" /></figure>
-                    <div class="card-body w-96 pl-0 text-left">
+                    <div class="card-body flex-grow-0 w-96 pl-0 text-left">
                         <!-- author info -->
                         <div class="card-actions justify-start ">
                             <!-- author img  -->
                             <div class="avatar"> 
                                 <div class="w-10 h-10 mr-4 rounded-full">
-                                    <img src="${video.authors[0].profile_picture}" alt="">
+                                    <img src="${video.authors[0].profile_picture}" alt=""> 
                                 </div>
                             <div class="">
                                 <!-- videos title  -->
-                                <h2 class="card-title">${video.title}</h2>
+                                <h2 class="card-title ">${video.title}</h2>
                                 <!-- author name -->
-                                <p class="text-sm mt-3">${video.authors[0].profile_name} ${video.authors[0].verified} </p>
+                                <div class="text-sm mt-5 flex gap-3 align-baseline   ">
+                                <p class="">${video.authors[0].profile_name}</p> 
+                                <span class="text-center w-auto h-auto" >${video.authors[0].verified ? '<img class=""  src="../img/veryfied.svg"/>'
+                                : ""}</span>
+                                </div>
                                 <!-- viewed info -->
                                 <p>${video.others.views}</p>
                             </div>
