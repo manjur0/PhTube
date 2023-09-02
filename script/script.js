@@ -3,7 +3,7 @@ const handleCategories = async () => {
 
     const response = await fetch('https://openapi.programming-hero.com/api/videos/categories')
     const data = await response.json();
-    console.log(data.data);
+    // console.log(data.data);
 
     const tabContainer = document.getElementById('tab-container');
     data.data.forEach((categoris) => {
@@ -19,10 +19,24 @@ const handleCategories = async () => {
 handleVideos = async (categoriId) => {
     const response = await fetch(`https://openapi.programming-hero.com/api/videos/category/${categoriId}`)
     const data = await response.json();
+    const video = data.data;
+    // console.log(video);
+
+    // Showing Error massege in empty categoris 
+    const errorMassege = document.getElementById('errorMassege');
+    const errorImage = document.getElementById('errorImage');
+    if (video.length == 0) {
+        errorMassege.classList.remove('hidden');
+        errorImage.classList.remove('hidden');
+    } else {
+        errorMassege.classList.add('hidden');
+        errorImage.classList.add('hidden');
+    }
+
+    //    appaind catagoris and item
     const cardContainer = document.getElementById('card-container')
     cardContainer.innerHTML = '';
     data.data.forEach((video) => {
-        console.log(video);
         const newDiv = document.createElement('card-container');
         newDiv.innerHTML = `
                 <div class="card  bg-base-100 ">
@@ -42,7 +56,7 @@ handleVideos = async (categoriId) => {
                                 <div class="text-sm mt-5 flex gap-3 align-baseline   ">
                                 <p class="">${video.authors[0].profile_name}</p> 
                                 <span class="text-center w-auto h-auto" >${video.authors[0].verified ? '<img class=""  src="../img/veryfied.svg"/>'
-                                : ""}</span>
+                : ""}</span>
                                 </div>
                                 <!-- viewed info -->
                                 <p>${video.others.views}</p>
@@ -54,7 +68,8 @@ handleVideos = async (categoriId) => {
         `;
         cardContainer.appendChild(newDiv);
 
-    })
+    });
+
 
     // console.log(categoriId);
 }
