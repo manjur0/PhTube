@@ -55,8 +55,7 @@ handleVideos = async (categoriId) => {
                                 <!-- author name -->
                                 <div class="text-sm mt-5 flex gap-3 align-baseline   ">
                                 <p class="">${video.authors[0].profile_name}</p> 
-                                <span class="text-center w-auto h-auto" >${video.authors[0].verified ? '<img class=""  src="../img/veryfied.svg"/>'
-                : ""}</span>
+                                <span class="text-center w-auto h-auto" >${video.authors[0].verified ? '<img class=""  src="../img/veryfied.svg"/>' : ""}</span>
                                 </div>
                                 <!-- viewed info -->
                                 <p>${video.others.views}</p>
@@ -70,13 +69,8 @@ handleVideos = async (categoriId) => {
 
     });
 
-
     // console.log(categoriId);
 }
-
-
-
-
 
 
 

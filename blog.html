@@ -14,20 +14,21 @@
     <header>
         <nav>
             <div
-                class="navbar bg-base-100 text-center grid grid-cols-3 md:grid-cols-3 lg:grid-cols-3 justify-items-center ">
-                <div class="navbar-start">
+                class="navbar bg-base-100 text-center grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 justify-items-center ">
+                <div class="navbar-start ">
                     <div class="dropdown">
-                        <div onclick="window.location.href = 'index.html'" href="#blog.html" class=" cursor-pointer ">
-                            <img  src="./img/Logo.png" alt="">
+                        <div onclick="window.location.href = 'index.html'" href="#index.html" class=" cursor-pointer ">
+                            <img src="./img/Logo.png" alt="">
                         </div>
                     </div>
                 </div>
-                <div class="navbar-center">
-                    <button class="btn btn-ghost normal-case text-xl bg-slate-100">Sort by view</button>
+                <div class="navbar-center mt-4">
+                    <button id="shorting-viwe" class="btn btn-ghost normal-case text-xl bg-slate-100">Sort by
+                        view</button>
                 </div>
-                <div class="navbar-end">
-                    <button onclick="" class="btn btn-ghost text-sm bg-red-500 text-white ">
-                        <a href="#blog.html">Blog</a>
+                <div class="navbar-center mt-4">
+                    <button  class="btn btn-ghost text-sm justify-center bg-red-500 text-white ">
+                        <a onclick="window.location.href = 'blog.html'" href="#blog.html">Blog</a>
                     </button>
                 </div>
             </div>
@@ -43,24 +44,33 @@
                     Discuss the scope of var, let, and const
                 </div>
                 <div class="collapse-content px-10">
-                    <p>In JavaScript, the scope of variables declared with `var`, `let`, and `const` differs significantly, affecting how and where these variables can be accessed. <br>
+                    <p>In JavaScript, the scope of variables declared with `var`, `let`, and `const` differs
+                        significantly, affecting how and where these variables can be accessed. <br>
 
                         1. `var`:
-                           - Variables declared with `var` have function-level scope. They are accessible throughout the entire function in which they are defined.
-                           - If a `var` variable is declared within a block, it is hoisted to the top of the function or global scope, potentially leading to unexpected behavior.
-                           - Due to its hoisting behavior, `var` variables can be accessed before they are declared. <br>
-                        
+                        - Variables declared with `var` have function-level scope. They are accessible throughout the
+                        entire function in which they are defined.
+                        - If a `var` variable is declared within a block, it is hoisted to the top of the function or
+                        global scope, potentially leading to unexpected behavior.
+                        - Due to its hoisting behavior, `var` variables can be accessed before they are declared. <br>
+
                         2. `let`:
-                           - Variables declared with `let` have block-level scope. They are confined to the block in which they are defined, such as within loops, conditionals, or functions.
-                           - `let` variables are not hoisted to the top of the block and are not accessible before their declaration.
-                           - Block-scoping with `let` helps prevent variable leakage and facilitates cleaner, more predictable code. <br>
-                        
+                        - Variables declared with `let` have block-level scope. They are confined to the block in which
+                        they are defined, such as within loops, conditionals, or functions.
+                        - `let` variables are not hoisted to the top of the block and are not accessible before their
+                        declaration.
+                        - Block-scoping with `let` helps prevent variable leakage and facilitates cleaner, more
+                        predictable code. <br>
+
                         3. `const`:
-                           - Like `let`, `const` variables also have block-level scope.
-                           - However, `const` variables are constant and cannot be reassigned after initialization.
-                           - They offer the same block-scoping benefits as `let` while ensuring the immutability of the variable's value. <br>
-                        
-                        In modern JavaScript, `let` and `const` are preferred for their predictable scoping and block-level confinement, reducing the risk of bugs and unintended variable modifications. `var` is used less often due to its less predictable scoping behavior.</p>
+                        - Like `let`, `const` variables also have block-level scope.
+                        - However, `const` variables are constant and cannot be reassigned after initialization.
+                        - They offer the same block-scoping benefits as `let` while ensuring the immutability of the
+                        variable's value. <br>
+
+                        In modern JavaScript, `let` and `const` are preferred for their predictable scoping and
+                        block-level confinement, reducing the risk of bugs and unintended variable modifications. `var`
+                        is used less often due to its less predictable scoping behavior.</p>
 
                 </div>
             </div>
@@ -70,24 +80,34 @@
                     Tell us the use cases of null and undefined
                 </div>
                 <div class="collapse-content">
-                    <p>`null` and `undefined` are two distinct values in JavaScript, and they serve different purposes. <br>
+                    <p>`null` and `undefined` are two distinct values in JavaScript, and they serve different purposes.
+                        <br>
 
                         1. `null`:
-                           - `null` is a deliberate assignment, indicating the absence of a value or an intentional non-value.
-                           - Common use cases for `null` include:
-                             - Initializing a variable that you expect to hold an object or value later but currently has no value.
-                             - Clearing a variable or property by assigning it to `null` when you want to release resources or indicate that it's no longer needed.
-                             - As a placeholder when an object or value is expected but unavailable or irrelevant at a certain point in your code. <br>
-                        
+                        - `null` is a deliberate assignment, indicating the absence of a value or an intentional
+                        non-value.
+                        - Common use cases for `null` include:
+                        - Initializing a variable that you expect to hold an object or value later but currently has no
+                        value.
+                        - Clearing a variable or property by assigning it to `null` when you want to release resources
+                        or indicate that it's no longer needed.
+                        - As a placeholder when an object or value is expected but unavailable or irrelevant at a
+                        certain point in your code. <br>
+
                         2. `undefined`:
-                           - `undefined` typically represents an unintentional absence of value or a missing variable or property.
-                           - Common use cases for `undefined` include:
-                             - When a function doesn't return a value (implicitly, it returns `undefined`).
-                             - When accessing an object property or array element that doesn't exist.
-                             - As the initial value of function parameters if no argument is provided.
-                             - As the default value of variables if they are declared but not assigned. <br>
-                        
-                        In summary, `null` is used when you want to indicate a deliberate absence of value, while `undefined` often arises when there's a mistake or when a value is not yet available or provided. Understanding these distinctions is important for writing robust and meaningful JavaScript code.</p>
+                        - `undefined` typically represents an unintentional absence of value or a missing variable or
+                        property.
+                        - Common use cases for `undefined` include:
+                        - When a function doesn't return a value (implicitly, it returns `undefined`).
+                        - When accessing an object property or array element that doesn't exist.
+                        - As the initial value of function parameters if no argument is provided.
+                        - As the default value of variables if they are declared but not assigned. <br>
+
+                        In summary, `null` is used when you want to indicate a deliberate absence of value, while
+                        `undefined` often arises when there's a mistake or when a value is not yet available or
+                        provided. Understanding these distinctions is important for writing robust and meaningful
+                        JavaScript code.
+                    </p>
                 </div>
             </div>
             <div class="collapse collapse-plus bg-base-200">
@@ -96,20 +116,33 @@
                     What do you mean by REST API?
                 </div>
                 <div class="collapse-content">
-                    <p>A REST API, which stands for Representational State Transfer Application Programming Interface, is a set of rules and conventions used for building and interacting with web services over HTTP (Hypertext Transfer Protocol). It is a widely adopted architectural style for designing networked applications. <br>
+                    <p>A REST API, which stands for Representational State Transfer Application Programming Interface,
+                        is a set of rules and conventions used for building and interacting with web services over HTTP
+                        (Hypertext Transfer Protocol). It is a widely adopted architectural style for designing
+                        networked applications. <br>
 
                         In a RESTful API:
-                        1. **Resources**: Data or objects in the system are represented as resources. These resources are identified by unique URLs (Uniform Resource Locators). <br>
-                        
-                        2. **HTTP Verbs**: REST APIs use standard HTTP methods, or "verbs," to perform actions on resources. The most common HTTP methods used are GET (retrieve data), POST (create data), PUT (update data), and DELETE (remove data). <br>
-                        
-                        3. **Stateless**: Each request from a client to a server must contain all the information needed to understand and process the request. The server does not store any client state between requests. <br>
-                        
-                        4. **Statelessness**: REST APIs are stateless, meaning each request from a client to a server must contain all the information needed to understand and process the request. The server does not store any client state between requests. <br>
-                        
-                        5. **Representation**: Resources are typically represented in different formats, such as JSON or XML, allowing clients to request and receive data in their preferred format. <br>
-                        
-                        REST APIs provide a simple and scalable way for different software systems to communicate over the internet. They are commonly used in web and mobile applications to retrieve, create, update, and delete data from servers, making it a fundamental technology for modern web development.</p>
+                        1. **Resources**: Data or objects in the system are represented as resources. These resources
+                        are identified by unique URLs (Uniform Resource Locators). <br>
+
+                        2. **HTTP Verbs**: REST APIs use standard HTTP methods, or "verbs," to perform actions on
+                        resources. The most common HTTP methods used are GET (retrieve data), POST (create data), PUT
+                        (update data), and DELETE (remove data). <br>
+
+                        3. **Stateless**: Each request from a client to a server must contain all the information needed
+                        to understand and process the request. The server does not store any client state between
+                        requests. <br>
+
+                        4. **Statelessness**: REST APIs are stateless, meaning each request from a client to a server
+                        must contain all the information needed to understand and process the request. The server does
+                        not store any client state between requests. <br>
+
+                        5. **Representation**: Resources are typically represented in different formats, such as JSON or
+                        XML, allowing clients to request and receive data in their preferred format. <br>
+
+                        REST APIs provide a simple and scalable way for different software systems to communicate over
+                        the internet. They are commonly used in web and mobile applications to retrieve, create, update,
+                        and delete data from servers, making it a fundamental technology for modern web development.</p>
                 </div>
             </div>
         </section>
