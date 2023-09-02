@@ -14,19 +14,19 @@
     <header>
         <nav>
             <div
-                class="navbar bg-base-100 text-center grid grid-cols-3 md:grid-cols-3 lg:grid-cols-3 justify-items-center ">
-                <div class="navbar-start">
+                class="navbar bg-base-100 text-center grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 justify-items-center ">
+                <div class="navbar-start ">
                     <div class="dropdown">
                         <div class=" cursor-pointer ">
                             <img src="./img/Logo.png" alt="">
                         </div>
                     </div>
                 </div>
-                <div class="navbar-center">
+                <div class="navbar-center mt-4">
                     <button class="btn btn-ghost normal-case text-xl bg-slate-100">Sort by view</button>
                 </div>
-                <div class="navbar-end">
-                    <button onclick="" class="btn btn-ghost text-sm bg-red-500 text-white ">
+                <div class="navbar-center mt-4">
+                    <button onclick="" class="btn btn-ghost text-sm justify-center bg-red-500 text-white ">
                         <a onclick="window.location.href = 'blog.html'" href="#blog.html">Blog</a>
                     </button>
                 </div>
@@ -37,25 +37,24 @@
         <section>
             <!-- categoris tab -->
             <div class="tab-container">
-                <div id="tab-container"
-                    class="tabs mx-auto justify-center md:justify-center lg:justify-center text-4xl gap-4 my-5 font-extrabold text-black">
+                <div id="tab-container" class="tabs mx-auto justify-center md:justify-center lg:justify-center text-4xl gap-4 my-5 font-extrabold text-black">
                     <!-- <a class="tab">ALL</a> 
-        <a class="tab">Tab 1</a> 
-        <a class="tab">Tab 2</a> 
-        <a class="tab">Tab 3</a> -->
+                    <a class="tab">Tab 1</a> 
+                    <a class="tab">Tab 2</a> 
+                    <a class="tab">Tab 3</a> -->
                 </div>
             </div>
         </section>
         <section>
             <!-- cards container  -->
-            <div id="card-container" class=" mx-auto grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4 my-5">
+            <div id="card-container" class=" mx-auto grid grid-cols-1 px-7 md:grid-cols-2 lg:grid-cols-4 gap-4 my-5">
             </div>
 
             <!-- drowing categoris  -->
             <div class="flex justify-center items-center">
                 <div>
                     <img src="./img/Icon.png" class="hidden mx-auto" id="errorImage">
-                    <h2 class="hidden text-[#171717] text-xl md:text-3xl font-bold mt-8" id="errorMassege">Oops!! Sorry, There
+                    <h2 class="hidden text-[#171717] text-xl px-10 text-center md:text-3xl font-bold mt-8" id="errorMassege">Oops!! Sorry, There
                         is no content here</h2>
                 </div>
             </div>

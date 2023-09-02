@@ -39,7 +39,7 @@ handleVideos = async (categoriId) => {
     data.data.forEach((video) => {
         const newDiv = document.createElement('card-container');
         newDiv.innerHTML = `
-                <div class="card  bg-base-100 ">
+                <div class="card  bg-base-100 md:px-4 ">
                     <figure><img class="max-h-44" src="${video.thumbnail}" /></figure>
                     <div class="card-body flex-grow-0 w-96 pl-0 text-left">
                         <!-- author info -->
